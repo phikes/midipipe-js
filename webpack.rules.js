@@ -1,7 +1,7 @@
 module.exports = [
   {
     test: /native_modules[/\\].+\.node$/,
-    use: 'node-loader',
+    use: 'node-loader'
   },
   {
     test: /[/\\]node_modules[/\\].+\.(m?js|node)$/,
@@ -9,9 +9,9 @@ module.exports = [
     use: {
       loader: '@vercel/webpack-asset-relocator-loader',
       options: {
-        outputAssetBase: 'native_modules',
-      },
-    },
+        outputAssetBase: 'native_modules'
+      }
+    }
   },
   {
     test: /\.jsx?$/,
@@ -20,14 +20,14 @@ module.exports = [
       options: {
         exclude: /node_modules/,
         presets: [
-            [
-                '@babel/preset-react',
-                {
-                    runtime: 'automatic'
-                }
-            ]
+          [
+            '@babel/preset-react',
+            {
+              runtime: 'automatic'
+            }
+          ]
         ]
       }
     }
-  },
-];
+  }
+]
